@@ -1,0 +1,47 @@
+server:
+  port: 8083
+
+spring:
+  application:
+    name: ai-analysis-service
+
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3307/ai_analysis_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:root}
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: ${SHOW_SQL:true}
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+
+services:
+  financial-analytics:
+    base-url: ${FINANCIAL_ANALYTICS_BASE_URL:http://localhost:8082}
+
+  financial-data:
+    base-url: ${FINANCIAL_DATA_BASE_URL:http://localhost:8081}
+
+ai:
+  provider: gemini
+
+  gemini:
+    base-url: ${GEMINI_BASE_URL:https://generativelanguage.googleapis.com/v1beta}
+    model: ${GEMINI_MODEL:gemini-3.6-flash}
+    api-key: ${GEMINI_API_KEY:}
+
+  context:
+    max-nodes: ${AI_CONTEXT_MAX_NODES:5}
+    max-metrics-years: ${AI_CONTEXT_MAX_METRICS_YEARS:3}
+    max-findings: ${AI_CONTEXT_MAX_FINDINGS:10}
+    include-previous-reports: ${AI_CONTEXT_INCLUDE_PREVIOUS_REPORTS:false}
+    max-previous-reports: ${AI_CONTEXT_MAX_PREVIOUS_REPORTS:2}

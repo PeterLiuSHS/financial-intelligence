@@ -1,0 +1,3 @@
+CREATE DATABASE IF NOT EXISTS financial_data_db;
+CREATE DATABASE IF NOT EXISTS financial_analytics_db;
+CREATE DATABASE IF NOT EXISTS ai_analysis_db;
