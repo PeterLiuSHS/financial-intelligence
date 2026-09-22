@@ -1,0 +1,122 @@
+{
+  "summary": {
+    "total_questions": 2,
+    "successful_questions": 2,
+    "abstained_questions": 0,
+    "abstain_rate": 0.0,
+    "total_initial_claims": 9,
+    "initial_supported": 9,
+    "initial_partial": 0,
+    "initial_unsupported": 0,
+    "initial_support_rate": 100.0,
+    "repair_triggered_questions": 0,
+    "repair_trigger_rate": 0.0,
+    "total_final_claims": 9,
+    "final_supported": 9,
+    "final_support_rate": 100.0,
+    "average_latency_ms": 25066.98,
+    "retrieval_evaluated_questions": 1,
+    "hit_at_4": 100.0,
+    "mean_recall_at_4": 100.0,
+    "mrr": 1.0,
+    "completeness_evaluated_questions": 1,
+    "mean_expected_point_coverage": 75.0
+  },
+  "results": [
+    {
+      "id": 1,
+      "ticker": "AAPL",
+      "category": "supply_chain",
+      "question": "What supply chain risks does Apple face?",
+      "latency_ms": 28289.27,
+      "evaluation_trace": {
+        "initial_claim_count": 5,
+        "initial_supported": 5,
+        "initial_partial": 0,
+        "initial_unsupported": 0,
+        "repair_performed": false,
+        "final_claim_count": 5,
+        "final_supported": 5,
+        "timings": {
+          "retrieval_ms": 496.56,
+          "generation_ms": 11498.68,
+          "verification_ms": 9838.12,
+          "repair_ms": 0,
+          "reverification_ms": 0,
+          "final_summary_ms": 6455.78,
+          "total_ms": 28289.23
+        }
+      },
+      "retrieval_metrics": null,
+      "completeness_metrics": null,
+      "success": true
+    },
+    {
+      "id": 2,
+      "ticker": "AAPL",
+      "category": "outsourcing",
+      "question": "How dependent is Apple on third-party manufacturers and outsourcing partners?",
+      "latency_ms": 21844.68,
+      "evaluation_trace": {
+        "initial_claim_count": 4,
+        "initial_supported": 4,
+        "initial_partial": 0,
+        "initial_unsupported": 0,
+        "repair_performed": false,
+        "final_claim_count": 4,
+        "final_supported": 4,
+        "timings": {
+          "retrieval_ms": 376.26,
+          "generation_ms": 6450.58,
+          "verification_ms": 5971.74,
+          "repair_ms": 0,
+          "reverification_ms": 0,
+          "final_summary_ms": 5352.19,
+          "total_ms": 18150.84
+        }
+      },
+      "retrieval_metrics": {
+        "retrieved_chunk_ids": [
+          11,
+          13,
+          3,
+          17
+        ],
+        "expected_chunk_ids": [
+          11
+        ],
+        "hit_at_4": 1,
+        "recall_at_4": 1.0,
+        "reciprocal_rank": 1.0
+      },
+      "completeness_metrics": {
+        "expected_points": [
+          "A significant majority of Apple's manufacturing is performed by outsourcing partners.",
+          "Apple relies on partners for final assembly of substantially all hardware products.",
+          "Apple outsources much of its transportation and logistics management.",
+          "Outsourcing reduces Apple's direct control over production and distribution."
+        ],
+        "coverage_items": [
+          {
+            "point": "A significant majority of Apple's manufacturing is performed by outsourcing partners.",
+            "covered": true
+          },
+          {
+            "point": "Apple relies on partners for final assembly of substantially all hardware products.",
+            "covered": true
+          },
+          {
+            "point": "Apple outsources much of its transportation and logistics management.",
+            "covered": true
+          },
+          {
+            "point": "Outsourcing reduces Apple's direct control over production and distribution.",
+            "covered": false
+          }
+        ],
+        "coverage": 0.75
+      },
+      "success": true
+    }
+  ]
+}

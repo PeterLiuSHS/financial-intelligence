@@ -1,13 +1,12 @@
 package com.finintel.financialdata;
 
+import com.finintel.financialdata.integration.AbstractIntegrationTest;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class FinancialDataServiceApplicationTests {
+class FinancialDataServiceApplicationTests
+        extends AbstractIntegrationTest {
 
     @Test
     void contextLoads() {
     }
-
 }

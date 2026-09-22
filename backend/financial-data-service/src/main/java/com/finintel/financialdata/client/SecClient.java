@@ -24,9 +24,19 @@ public class SecClient {
     private static final String SEC_COMPANY_FACTS_CACHE_KEY_PREFIX =
             "sec:company-facts:cik:";
 
+    private static final String SEC_COMPANY_SUBMISSIONS_CACHE_KEY_PREFIX =
+            "sec:company-submissions:cik:";
+
+    private static final String SEC_FILING_DOCUMENT_CACHE_KEY_PREFIX =
+            "sec:filing-document:";
+
     private static final Duration COMPANY_TICKERS_TTL = Duration.ofHours(24);
 
     private static final Duration COMPANY_FACTS_TTL = Duration.ofHours(6);
+
+    private static final Duration COMPANY_SUBMISSIONS_TTL = Duration.ofHours(6);
+
+    private static final Duration FILING_DOCUMENT_TTL = Duration.ofHours(24);
 
     private final RestClient restClient;
     private final SecApiProperties secApiProperties;
@@ -94,6 +104,105 @@ public class SecClient {
         );
 
         return parseJsonNode(json);
+    }
+
+    public JsonNode getCompanySubmissions(String cik) {
+        String cacheKey = SEC_COMPANY_SUBMISSIONS_CACHE_KEY_PREFIX + cik;
+
+        String cachedJson = stringRedisTemplate.opsForValue().get(cacheKey);
+
+        if (cachedJson != null) {
+            System.out.println("SEC company submissions cache hit for CIK: " + cik);
+            return parseJsonNode(cachedJson);
+        }
+
+        System.out.println("SEC company submissions cache miss for CIK: " + cik);
+
+        String url = secApiProperties.submissionsUrlTemplate().formatted(cik);
+
+        String json = restClient.get()
+                .uri(url)
+                .header(HttpHeaders.USER_AGENT, secApiProperties.userAgent())
+                .retrieve()
+                .body(String.class);
+
+        stringRedisTemplate.opsForValue().set(
+                cacheKey,
+                json,
+                COMPANY_SUBMISSIONS_TTL
+        );
+
+        return parseJsonNode(json);
+    }
+
+    public String getFilingDocument(
+            String cik,
+            String accessionNumber,
+            String primaryDocument
+    ) {
+        String cikWithoutLeadingZeros =
+                String.valueOf(Integer.parseInt(cik));
+
+        String accessionNumberWithoutHyphens =
+                accessionNumber.replace("-", "");
+
+        String cacheKey =
+                SEC_FILING_DOCUMENT_CACHE_KEY_PREFIX
+                        + cik
+                        + ":"
+                        + accessionNumberWithoutHyphens
+                        + ":"
+                        + primaryDocument;
+
+        String cachedHtml =
+                stringRedisTemplate.opsForValue().get(cacheKey);
+
+        if (cachedHtml != null) {
+            System.out.println(
+                    "SEC filing document cache hit: "
+                            + primaryDocument
+            );
+
+            return cachedHtml;
+        }
+
+        System.out.println(
+                "SEC filing document cache miss: "
+                        + primaryDocument
+        );
+
+        String url =
+                secApiProperties
+                        .filingDocumentUrlTemplate()
+                        .formatted(
+                                cikWithoutLeadingZeros,
+                                accessionNumberWithoutHyphens,
+                                primaryDocument
+                        );
+
+        String html = restClient.get()
+                .uri(url)
+                .header(
+                        HttpHeaders.USER_AGENT,
+                        secApiProperties.userAgent()
+                )
+                .retrieve()
+                .body(String.class);
+
+        if (html == null || html.isBlank()) {
+            throw new ResourceNotFoundException(
+                    "SEC filing document is empty: "
+                            + primaryDocument
+            );
+        }
+
+        stringRedisTemplate.opsForValue().set(
+                cacheKey,
+                html,
+                FILING_DOCUMENT_TTL
+        );
+
+        return html;
     }
 
     public String formatCik(Integer cikStr) {

@@ -6,6 +6,8 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 public record SecApiProperties(
         String companyTickersUrl,
         String companyFactsUrlTemplate,
+        String submissionsUrlTemplate,
+        String filingDocumentUrlTemplate,
         String userAgent
 ) {
 }

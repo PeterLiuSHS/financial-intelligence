@@ -31,6 +31,18 @@ services:
       RABBITMQ_DEFAULT_USER: guest
       RABBITMQ_DEFAULT_PASS: guest
 
+  vector-db:
+    image: pgvector/pgvector:pg17
+    container_name: finintel-vector-db
+    environment:
+      POSTGRES_DB: finintel_vector_db
+      POSTGRES_USER: finintel
+      POSTGRES_PASSWORD: finintel
+    ports:
+      - "5433:5432"
+    volumes:
+        - vector_db_data:/var/lib/postgresql/data
+
   financial-data-service:
     build:
       context: ../backend/financial-data-service
@@ -114,3 +126,4 @@ services:
 
 volumes:
   finintel_mysql_data:
+  vector_db_data:

@@ -1,0 +1,251 @@
+[
+  {
+    "id": 1,
+    "ticker": "AAPL",
+    "fiscal_year": 2025,
+    "question": "What supply chain risks does Apple face?",
+    "category": "supply_chain"
+  },
+  {
+    "id": 2,
+    "ticker": "AAPL",
+    "fiscal_year": 2025,
+    "question": "How dependent is Apple on third-party manufacturers and outsourcing partners?",
+    "category": "outsourcing",
+    "expected_chunk_ids": [
+      11
+    ],
+    "expected_points": [
+      "A significant majority of Apple's manufacturing is performed by outsourcing partners.",
+      "Apple relies on partners for final assembly of substantially all hardware products.",
+      "Apple outsources much of its transportation and logistics management.",
+      "Outsourcing reduces Apple's direct control over production and distribution."
+    ]
+  },
+  {
+    "id": 3,
+    "ticker": "AAPL",
+    "fiscal_year": 2025,
+    "question": "What risks does Apple face from single-source suppliers?",
+    "category": "supplier_dependency",
+    "expected_chunk_ids": [
+      6,
+      11,
+      12,
+      13
+    ],
+    "expected_points": [
+      "Apple relies on single or limited sources for many critical components.",
+      "Single-source dependency increases supply disruption risk.",
+      "Apple may be unable to obtain sufficient quantities from suppliers in a timely manner.",
+      "Apple may have difficulty finding sufficient alternative sources."
+    ]
+  },
+  {
+    "id": 4,
+    "ticker": "AAPL",
+    "fiscal_year": 2025,
+    "question": "How could pandemics or public health issues affect Apple's operations?",
+    "category": "business_disruption",
+    "expected_chunk_ids": [
+      5,
+      6
+    ],
+    "expected_points": [
+      "Public health issues can disrupt Apple's operations, supply chain, and sales and distribution channels.",
+      "Public health measures can restrict employee travel, freight services, and movement of products.",
+      "Pandemics can interrupt supply of current products and existing services.",
+      "Pandemics can delay production ramps of new products and development of new services."
+    ]
+  },
+  {
+    "id": 5,
+    "ticker": "AAPL",
+    "fiscal_year": 2025,
+    "question": "What macroeconomic risks could affect Apple's suppliers and partners?",
+    "category": "macroeconomic",
+    "expected_chunk_ids": [
+      0,
+      1
+    ],
+    "expected_points": [
+      "Adverse global or regional economic conditions can affect Apple's suppliers and business partners.",
+      "Partners may experience financial instability.",
+      "Partners may be unable to obtain credit to finance operations.",
+      "Partners may become insolvent."
+    ]
+  },
+  {
+    "id": 6,
+    "ticker": "AAPL",
+    "fiscal_year": 2025,
+    "question": "What risks does Apple face from trade disputes and geopolitical tensions?",
+    "category": "geopolitical",
+    "expected_chunk_ids": [
+      2,
+      3,
+      4
+    ],
+    "expected_points": [
+      "Trade restrictions can increase costs or limit availability of products, components, and raw materials.",
+      "Trade restrictions can force Apple to change suppliers or restructure business relationships and operations.",
+      "Changing the supply chain in response to trade restrictions can be expensive, time-consuming, and disruptive.",
+      "Escalating geopolitical tensions or conflict can significantly disrupt concentrated global supply chains."
+    ]
+  },
+  {
+    "id": 7,
+    "ticker": "AAPL",
+    "fiscal_year": 2025,
+    "question": "What manufacturing risks does Apple disclose?",
+    "category": "manufacturing"
+  },
+  {
+    "id": 8,
+    "ticker": "AAPL",
+    "fiscal_year": 2025,
+    "question": "What risks could affect Apple's product quality?",
+    "category": "product_quality"
+  },
+  {
+    "id": 9,
+    "ticker": "AAPL",
+    "fiscal_year": 2025,
+    "question": "What risks arise from Apple's international operations?",
+    "category": "international"
+  },
+  {
+    "id": 10,
+    "ticker": "AAPL",
+    "fiscal_year": 2025,
+    "question": "How could natural disasters disrupt Apple's business?",
+    "category": "business_disruption",
+    "expected_chunk_ids": [
+      2,
+      5
+    ],
+    "expected_points": [
+      "Apple and supplier facilities operate in locations prone to earthquakes and other natural disasters.",
+      "Climate change can increase the frequency or intensity of certain natural disasters and extreme weather.",
+      "Natural disasters can disrupt manufacturing and product delivery.",
+      "Such disruptions can create delays and inefficiencies in Apple's supply and manufacturing chain."
+    ]
+  },
+  {
+    "id": 11,
+    "ticker": "AAPL",
+    "fiscal_year": 2025,
+    "question": "What risks does Apple face if suppliers fail or consolidate?",
+    "category": "supplier_dependency",
+    "expected_chunk_ids": [
+      13
+    ],
+    "expected_points": [
+      "Component suppliers may fail.",
+      "Suppliers may be affected by consolidation within an industry.",
+      "Supplier failure or consolidation can limit Apple's ability to obtain sufficient quantities of components.",
+      "These conditions can contribute to supply shortages and price increases."
+    ]
+  },
+  {
+    "id": 12,
+    "ticker": "AAPL",
+    "fiscal_year": 2025,
+    "question": "How can component shortages affect Apple?",
+    "category": "supply_chain",
+    "expected_chunk_ids": [
+      12,
+      13
+    ],
+    "expected_points": [
+      "Components can be subject to industry-wide shortages.",
+      "Shortages can prevent Apple from obtaining sufficient quantities of components.",
+      "Component shortages can increase supply and pricing risks.",
+      "Shortages can materially adversely affect Apple's business and financial results."
+    ]
+  },
+  {
+    "id": 13,
+    "ticker": "AAPL",
+    "fiscal_year": 2025,
+    "question": "What risks are associated with Apple's logistics providers?",
+    "category": "logistics"
+  },
+  {
+    "id": 14,
+    "ticker": "AAPL",
+    "fiscal_year": 2025,
+    "question": "What operational risks arise when Apple changes its supply chain?",
+    "category": "supply_chain"
+  },
+  {
+    "id": 15,
+    "ticker": "AAPL",
+    "fiscal_year": 2025,
+    "question": "What risks could supplier code of conduct violations create for Apple?",
+    "category": "supplier_compliance",
+    "expected_chunk_ids": [
+      11
+    ],
+    "expected_points": [
+      "Apple relies on partners to follow its supplier code of conduct.",
+      "Supplier code of conduct violations occur from time to time.",
+      "Violations can harm Apple's business and reputation.",
+      "Violations can adversely affect Apple's results of operations and financial condition."
+    ]
+  },
+  {
+    "id": 16,
+    "ticker": "AAPL",
+    "fiscal_year": 2025,
+    "question": "How could economic downturns affect Apple's business partners?",
+    "category": "macroeconomic"
+  },
+  {
+    "id": 17,
+    "ticker": "AAPL",
+    "fiscal_year": 2025,
+    "question": "What risks does Apple face from industrial accidents?",
+    "category": "business_disruption",
+    "expected_chunk_ids": [
+      5,
+      6
+    ],
+    "expected_points": [
+      "Industrial accidents can occur at Apple's suppliers and contract manufacturers.",
+      "Industrial accidents can cause serious injuries or loss of life.",
+      "Industrial accidents can disrupt Apple's business.",
+      "Industrial accidents can harm Apple's reputation."
+    ]
+  },
+  {
+    "id": 18,
+    "ticker": "AAPL",
+    "fiscal_year": 2025,
+    "question": "Why are custom components a supply risk for Apple?",
+    "category": "supplier_dependency",
+    "expected_chunk_ids": [
+      13
+    ],
+    "expected_points": [
+      "New Apple products often use custom components available from only one source.",
+      "New technologies can face initial supplier capacity constraints.",
+      "Apple may be unable to obtain sufficient quantities from suppliers in a timely manner.",
+      "Apple may be unable to identify and obtain sufficient quantities from alternative sources."
+    ]
+  },
+  {
+    "id": 19,
+    "ticker": "AAPL",
+    "fiscal_year": 2025,
+    "question": "What factors could delay Apple's new product production ramps?",
+    "category": "manufacturing"
+  },
+  {
+    "id": 20,
+    "ticker": "AAPL",
+    "fiscal_year": 2025,
+    "question": "Summarize Apple's major operational supply risks.",
+    "category": "supply_chain"
+  }
+]
